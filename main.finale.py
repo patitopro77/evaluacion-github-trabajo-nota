@@ -20,7 +20,7 @@ def listar_tareas():
         
     print("\n================ LISTA DE TAREAS ================")
     for i, tarea in enumerate(tareas, 1):
-        estado = "🟢 Completada" if tarea["completada"] else "🔴 Pendiente"
+        estado = " Completada" if tarea["completada"] else " Pendiente"
         print(f"[{i}] {tarea['titulo']} - Estado: {estado}")
     print("=================================================")
     return True
@@ -47,7 +47,7 @@ def eliminar_tarea():
     try:
         indice = int(input("\nSeleccione el número de tarea a eliminar: ")) - 1
         if 0 <= indice < len(tareas):
-            # Extrae el elemento liberando espacio de la memoria
+            # libera espacio de la memoria
             tarea_eliminada = tareas.pop(indice)
             print(f"Tarea '{tarea_eliminada['titulo']}' eliminada correctamente.")
         else:
@@ -70,23 +70,20 @@ def main():
         mostrar_menu()
         opcion = input("\nSeleccione una opción (1-5): ").strip()
         
-        if opcion == "1":
+        if opcion == 1:
             agregar_tarea()
-        elif opcion == "2":
+        elif opcion == 2:
             listar_tareas()
-        elif opcion == "3":
+        elif opcion == 3:
             marcar_completada()
-        elif opcion == "4":
+        elif opcion == 4:
             eliminar_tarea()
-        elif opcion == "5":
+        elif opcion == 5:
             print("\nEjecución finalizada. Gracias por utilizar el sistema.")
             break
         else:
             print("Opción no válida. Por favor, marque una opción del 1 al 5.")
 
 # Ejecución del programa
-if __name__ == "__main__":
-    main()
-    main()zzzzz
-
+main()
 
